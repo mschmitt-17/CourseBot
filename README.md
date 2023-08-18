@@ -21,6 +21,7 @@ Explanation:    pass 'computer science' into subject search bar in image and '22
 ![image link](https://github.com/mschmitt-17/CourseBot/tree/main/imgs/nextbutton.png)
 
 Lines:  
+        ```
         wait.until(EC.element_to_be_clickable((By.XPATH, "/html/body/main/div[3]/div/div[2]/div/div[1]/div/div[2]/div[3]/div[2]/div[1]/div[1]/div[2]/div/button[3]")));
         
         next_button = driver.find_element(By.XPATH, "/html/body/main/div[3]/div/div[2]/div/div[1]/div/div[2]/div[3]/div[2]/div[1]/div[1]/div[2]/div/button[3]");
@@ -28,6 +29,7 @@ Lines:
         next_button.click();
         
         time.sleep(1)
+        ```
 
 Explanation:    wait until we can click next button indicated in image, then click the button to move to the next page
 
