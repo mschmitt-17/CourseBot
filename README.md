@@ -11,7 +11,7 @@ Explanation:    Log in to UIUC self-service and navigate to registration for mos
 
 ![image link](https://github.com/mschmitt-17/CourseBot/tree/main/imgs/registrationscreen.png)
 
-Lines:  wait.until(EC.presence_of_element_located((By.XPATH, "/html/body/main/div[3]/div/div[2]/div/div[1]/div/div[1]/div[3]/div[1]/div/fieldset/div[1]/p/div/ul/li/input")))
+Lines:  wait.until(EC.presence_of_element_located((By.XPATH, "/html/body/main/div[3]/div/div[2]/div/div[1]/div/div[1]/div[3]/div[1]/div/fieldset/div[1]/p/div/ul/li/input")));
         
         CourseBot.course_search(driver, 'computer science', '225')
 
@@ -20,11 +20,11 @@ Explanation:    pass 'computer science' into subject search bar in image and '22
 
 ![image link](https://github.com/mschmitt-17/CourseBot/tree/main/imgs/nextbutton.png)
 
-Lines:  wait.until(EC.element_to_be_clickable((By.XPATH, "/html/body/main/div[3]/div/div[2]/div/div[1]/div/div[2]/div[3]/div[2]/div[1]/div[1]/div[2]/div/button[3]")))
+Lines:  wait.until(EC.element_to_be_clickable((By.XPATH, "/html/body/main/div[3]/div/div[2]/div/div[1]/div/div[2]/div[3]/div[2]/div[1]/div[1]/div[2]/div/button[3]")));
         
-        next_button = driver.find_element(By.XPATH, "/html/body/main/div[3]/div/div[2]/div/div[1]/div/div[2]/div[3]/div[2]/div[1]/div[1]/div[2]/div/button[3]")
+        next_button = driver.find_element(By.XPATH, "/html/body/main/div[3]/div/div[2]/div/div[1]/div/div[2]/div[3]/div[2]/div[1]/div[1]/div[2]/div/button[3]");
         
-        next_button.click()
+        next_button.click();
         
         time.sleep(1)
 
@@ -42,15 +42,15 @@ Explanation:    get element with lecture status indicated by arrow in image, we 
 
 Lines:  if 'FULL' not in lecture_status.get_attribute('title'):
         
-        lecture_add = driver.find_element(By.XPATH, "/html/body/main/div[3]/div/div[2]/div/div[1]/div/div[2]/div[3]/div[2]/div[1]/div[1]/div[1]/div/table/tbody/tr[2]/td[11]/div/button")
+        lecture_add = driver.find_element(By.XPATH, "/html/body/main/div[3]/div/div[2]/div/div[1]/div/div[2]/div[3]/div[2]/div[1]/div[1]/div[1]/div/table/tbody/tr[2]/td[11]/div/button");
         
-        lecture_add.click()
+        lecture_add.click();
         
-        time.sleep(1)
+        time.sleep(1);
         
-        prev_button = driver.find_element(By.XPATH, "/html/body/main/div[3]/div/div[2]/div/div[1]/div/div[2]/div[3]/div[2]/div[1]/div[1]/div[2]/div/button[2]")
+        prev_button = driver.find_element(By.XPATH, "/html/body/main/div[3]/div/div[2]/div/div[1]/div/div[2]/div[3]/div[2]/div[1]/div[1]/div[2]/div/button[2]");
         
-        prev_button.click()
+        prev_button.click();
         
         time.sleep(1)
 
@@ -61,9 +61,9 @@ Explanation:    if lecture is not full, add the course by pressing the add butto
 
 ![image link](https://github.com/mschmitt-17/CourseBot/tree/main/imgs/addcourse.png)
 
-Lines:  discussion_add = driver.find_element(By.XPATH, "/html/body/main/div[3]/div/div[2]/div/div[1]/div/div[2]/div[3]/div[2]/div[1]/div[1]/div[1]/div/table/tbody/tr[2]/td[11]/div/button")
+Lines:  discussion_add = driver.find_element(By.XPATH, "/html/body/main/div[3]/div/div[2]/div/div[1]/div/div[2]/div[3]/div[2]/div[1]/div[1]/div[1]/div/table/tbody/tr[2]/td[11]/div/button");
         
-        discussion_add.click()
+        discussion_add.click();
         
         time.sleep(1)
 
@@ -72,9 +72,9 @@ Explanation:    add discussion section by pressing the add button indicated by t
 
 ![image link](https://github.com/mschmitt-17/CourseBot/tree/main/imgs/edithtml.png)
 
-Lines:  programming_lab_select = driver.find_element(By.XPATH, "/html/body/main/div[5]/div[1]/div/div[4]/div[1]/div/div[1]/div/table/tbody/tr[5]/td[7]/select")
+Lines:  programming_lab_select = driver.find_element(By.XPATH, "/html/body/main/div[5]/div[1]/div/div[4]/div[1]/div/div[1]/div/table/tbody/tr[5]/td[7]/select");
         
-        driver.execute_script("arguments[0].setAttribute('style', '')", programming_lab_select)
+        driver.execute_script("arguments[0].setAttribute('style', '')", programming_lab_select);
         
         time.sleep(0.5)
 
@@ -85,7 +85,7 @@ Explanation:    we must remove courses to make sure the course we want to add do
 
 ![image link](https://github.com/mschmitt-17/CourseBot/tree/main/imgs/removecourse.png)
 
-Lines:  Select(programming_lab_select).select_by_value("DW")
+Lines:  Select(programming_lab_select).select_by_value("DW");
         
         time.sleep(0.5)
 
@@ -94,13 +94,13 @@ Explanation:    now that we can interact with the select element, change it to t
 
 ![image link](https://github.com/mschmitt-17/CourseBot/tree/main/imgs/removesecondcourse.png?raw=true)
 
-Lines:  programming_lecture_select = driver.find_element(By.XPATH, "/html/body/main/div[5]/div[1]/div/div[4]/div[1]/div/div[1]/div/table/tbody/tr[6]/td[7]/select")
+Lines:  programming_lecture_select = driver.find_element(By.XPATH, "/html/body/main/div[5]/div[1]/div/div[4]/div[1]/div/div[1]/div/table/tbody/tr[6]/td[7]/select");
         
-        driver.execute_script("arguments[0].setAttribute('style', '')", programming_lecture_select)
+        driver.execute_script("arguments[0].setAttribute('style', '')", programming_lecture_select);
         
-        time.sleep(0.5)
+        time.sleep(0.5);
         
-        Select(programming_lecture_select).select_by_value("DW")
+        Select(programming_lecture_select).select_by_value("DW");
         
         time.sleep(0.5)
 
@@ -109,7 +109,7 @@ Explanation:    do the same thing as before for a second conflicting course
 
 ![image link](https://github.com/mschmitt-17/CourseBot/tree/main/imgs/submit.png?raw=true)
 
-Lines:  saveButton = driver.find_element(By.ID, "saveButton")
+Lines:  saveButton = driver.find_element(By.ID, "saveButton");
         
         saveButton.click()
 
